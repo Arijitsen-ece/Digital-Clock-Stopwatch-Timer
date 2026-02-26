@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Clock & Stopwatch Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="themeSwitcher" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <main class="container glass">
+    <!-- Digital Clock Section -->
+    <section class="clock-section">
+      <h1>Digital Clock</h1>
+      <div id="clock" class="time-display">
+        <span id="hh">--</span>
+        <span class="colon">:</span>
+        <span id="mm">--</span>
+        <span class="colon">:</span>
+        <span id="ss">--</span>
+      </div>
+      <div id="date" class="date-display"></div>
+    </section>
+
+    <!-- Stopwatch Section -->
+    <section class="stopwatch-section">
+      <h1>Stopwatch</h1>
+      <div id="stopwatch" class="time-display">00:00:00</div>
+      <div class="buttons">
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="stopStopwatch()">Stop</button>
+        <button onclick="resetStopwatch()">Reset</button>
+        <button onclick="lapStopwatch()">Lap</button>
+      </div>
+      <ul id="laps"></ul>
+    </section>
+
+    <!-- Timer Section -->
+    <section class="timer-section">
+      <h1>Timer</h1>
+      <div class="timer-inputs">
+        <input type="number" id="timerMinutes" placeholder="Minutes" min="0" />
+        <input type="number" id="timerSeconds" placeholder="Seconds" min="0" />
+        <button onclick="startTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+      <div id="timerDisplay" class="time-display">00:00</div>
+    </section>
+  </main>
+
+  <!-- Audio element for timer sound -->
+  <audio id="timerSound" src="race-start-beeps-125125.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

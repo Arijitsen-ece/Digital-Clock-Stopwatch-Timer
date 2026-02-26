@@ -1,0 +1,192 @@
+/* Google font */
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg: #e0e0e0;
+  --text: #000;
+  --glass: rgba(255, 255, 255, 0.15);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --glass: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* Container styles - add flexbox and gap for vertical stacking */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: var(--glass);
+  box-shadow: 0 8px 32px 0 var(--shadow);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* spacing between sections */
+}
+
+.time-display {
+  font-size: 3rem;
+  margin: 1rem 0;
+  letter-spacing: 3px;
+  display: inline-block;
+  background: linear-gradient(145deg, #00c6ff, #0072ff);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+  font-weight: bold;
+}
+
+.date-display {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--text);
+  color: var(--bg);
+  transition: transform 0.2s;
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+}
+
+ul#laps {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  max-height: 100px;
+  overflow-y: auto;
+  width: 100%;
+  text-align: left;
+}
+
+ul#laps li {
+  font-size: 1rem;
+  padding: 5px;
+  border-bottom: 1px dashed var(--text);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  background-color: #ccc;
+  border-radius: 24px;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+@media (max-width: 600px) {
+  .time-display {
+    font-size: 2.5rem;
+  }
+}
+
+/* Timer Input Styling */
+.timer-section {
+  width: 100%;
+  font-family: 'Orbitron', sans-serif;
+  color: #0072ff;
+}
+
+.timer-section h1 {
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.timer-inputs {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.timer-inputs input {
+  padding: 10px;
+  width: 120px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.timer-inputs button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #00c6ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.timer-inputs button:hover {
+  background: #0072ff;
+}
+
+/* Add some color to headings */
+h1 {
+  color: #0072ff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
